@@ -13,3 +13,5 @@ To fix this you will need to go the the file ` node_modules\@react-three\postpro
 and replace the usage of it with `THREE.sRGBEncoding`.
 
 ![image](https://github.com/zachary-rihia/portfolio/assets/83677402/09545131-d8fd-4a26-b1ac-9065a9b5a20c)
+
+ShaderPass and RenderPass from @react-three\postprocessing does not exist.
