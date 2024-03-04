@@ -2,7 +2,7 @@
 Portfolio for jobs
 
 ### Issues I have come across:
-- If you install all the dependentcies you will come across this issue.
+If you install all the dependentcies you will come across this issue.
 ![image](https://github.com/zachary-rihia/portfolio/assets/83677402/21265044-bb1b-47af-826f-517cca236fae)
 
 To fix this you will need to go the the file ` node_modules\@react-three\postprocessing\dist\effects\Texture.js ` and delete the `sRGBEncoding` import,
