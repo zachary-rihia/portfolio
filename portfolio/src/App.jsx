@@ -1,6 +1,9 @@
 import "./App.css";
-import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+import { Physics } from "@react-three/rapier";
+
+// Character
+import Character from "./Components/Character/Character";
 
 // Main Scene
 import Background from "./Components/MainScene/Background";
@@ -11,15 +14,18 @@ import Floor from "./Components/Floor";
 
 const App = () => {
   return (
-    <Canvas camera={{ fov: 70, position: [0, -1.5, 3] }}>
+    <>
       <OrbitControls />
       <ambientLight />
-      <Floor />
       <Background />
-      <Star starPosition={[18, 27, 1]} colour={"#F3F673"} />
-      <Star starPosition={[-21, 24, 1]} colour={"#E8A5F9"} />
-      <Star starPosition={[0, 18, 1]} colour={"#F0FFF4"} />
-    </Canvas>
+      <Physics gravity={[0, -20, 0]}>
+        <Floor />
+        <Character />
+        <Star starPosition={[24, 6, -30]} colour={"#F3F673"} />
+        <Star starPosition={[-27, 6, -24]} colour={"#E8A5F9"} />
+        <Star starPosition={[0, 6, -18]} colour={"#F0FFF4"} />
+      </Physics>
+    </>
   );
 };
 
