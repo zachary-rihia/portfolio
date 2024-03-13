@@ -8,7 +8,9 @@ import { RigidBody } from "@react-three/rapier";
 // Effects
 // import StarLight from "../Effects/StarLight";
 
-const Star = ({ starPosition, colour }) => {
+import StarSigns from "../Signs/StarSigns";
+
+const Star = ({ starPosition, colour, text }) => {
   const sphereRef = useRef();
 
   useFrame(() => {
@@ -28,19 +30,25 @@ const Star = ({ starPosition, colour }) => {
           intensity={1}
         />
       </EffectComposer>
-      <RigidBody>
-        <Sphere ref={sphereRef} position={starPosition} args={[4.5, 45, 45]}>
-          <meshPhongMaterial
-            color={colour}
-            // eslint-disable-next-line react/no-unknown-property
-            emissive={colour}
-            // eslint-disable-next-line react/no-unknown-property
-            emissiveIntensity={3}
-          />
-          <pointLight />
-        </Sphere>
-      </RigidBody>
-      {/* <StarLight sphereRef={sphereRef}/> */}
+      <group>
+        <RigidBody>
+          <Sphere ref={sphereRef} position={starPosition} args={[4.5, 45, 45]}>
+            <meshPhongMaterial
+              color={colour}
+              // eslint-disable-next-line react/no-unknown-property
+              emissive={colour}
+              // eslint-disable-next-line react/no-unknown-property
+              emissiveIntensity={3}
+            />
+            <pointLight />
+          </Sphere>
+        </RigidBody>
+        <StarSigns
+          position={[starPosition[0], 0.3, starPosition[2] + 6]}
+          text={text}
+        />
+        {/* <StarLight sphereRef={sphereRef}/> */}
+      </group>
     </>
   );
 };
@@ -48,6 +56,7 @@ const Star = ({ starPosition, colour }) => {
 Star.propTypes = {
   starPosition: PropTypes.arrayOf(PropTypes.number).isRequired,
   colour: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 };
 
 export default Star;

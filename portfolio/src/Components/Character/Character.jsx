@@ -68,9 +68,14 @@ const Character = () => {
 
   return (
     <group>
-      <RigidBody ref={playerRef} colliders={false} scale={[0.5, 0.5, 0.5]}>
-        <CapsuleCollider args={[0.8, 0.4]} position={[0, 6, 0]} />
-        <Capsule position={[0, 6, 0]}></Capsule>
+      <RigidBody
+        ref={playerRef}
+        colliders={false}
+        scale={[0.5, 0.5, 0.5]}
+        position={[0, 6, -33]}
+      >
+        <CapsuleCollider args={[0.8, 0.4]}/>
+        <Capsule></Capsule>
       </RigidBody>
     </group>
   );

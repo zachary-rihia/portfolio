@@ -21,9 +21,17 @@ const App = () => {
       <Physics gravity={[0, -20, 0]}>
         <Floor />
         <Character />
-        <Star starPosition={[24, 6, -30]} colour={"#F3F673"} />
-        <Star starPosition={[-27, 6, -24]} colour={"#E8A5F9"} />
-        <Star starPosition={[0, 6, -18]} colour={"#F0FFF4"} />
+        <Star
+          starPosition={[24, 6, -30]}
+          colour={"#F3F673"}
+          text={"About me"}
+        />
+        <Star
+          starPosition={[-27, 6, -24]}
+          colour={"#E8A5F9"}
+          text={"Credits"}
+        />
+        <Star starPosition={[0, 6, -18]} colour={"#F0FFF4"} text={"Projects"} />
       </Physics>
     </>
   );
