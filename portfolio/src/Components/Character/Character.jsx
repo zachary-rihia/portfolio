@@ -1,10 +1,11 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import * as THREE from "three";
 import { Capsule } from "@react-three/drei";
 import { RigidBody, CapsuleCollider } from "@react-three/rapier";
 import { useFrame, useThree } from "@react-three/fiber";
 
 import { usePlayerControls } from "../../Hooks/usePlayerControls";
+import CharacterPositionContext from "../../Context/CharacterPositionContext";
 
 const MOVE_SPEED = 21;
 const direction = new THREE.Vector3();
@@ -15,9 +16,10 @@ const Character = () => {
   const playerRef = useRef();
   const { camera } = useThree();
   const { forward, backward, left, right, jump } = usePlayerControls();
+  const { setPosition } = useContext(CharacterPositionContext);
 
   // The hook is called on each frame of the animation. Inside this hook, the player's position and linear velocity are updated.
-  useFrame((state) => {
+  useFrame(() => {
     if (!playerRef.current) return;
 
     // Ensure the character's position is a THREE.Vector3 object
@@ -59,22 +61,19 @@ const Character = () => {
 
     /* Set the player's new linear velocity based on the calculated direction of movement 
     and keep the current vertical velocity (so as not to affect jumps or falls). */
-    playerRef.current.setLinvel({
+    const playerPOS = playerRef.current.setLinvel({
       x: direction.x,
       y: velocity.y,
       z: direction.z,
     });
+
+    setPosition(playerPOS);
   });
 
   return (
     <group>
-      <RigidBody
-        ref={playerRef}
-        colliders={false}
-        scale={[0.5, 0.5, 0.5]}
-        position={[0, 6, -33]}
-      >
-        <CapsuleCollider args={[0.8, 0.4]}/>
+      <RigidBody ref={playerRef} position={[0, 6, -33]}>
+        <CapsuleCollider args={[0.8, 0.4]} />
         <Capsule></Capsule>
       </RigidBody>
     </group>

@@ -8,7 +8,8 @@ import { RigidBody } from "@react-three/rapier";
 // Effects
 // import StarLight from "../Effects/StarLight";
 
-import StarSigns from "../Signs/StarSigns";
+import StarSigns from "../../Signs/StarSigns";
+import Portal from "../../Portal";
 
 const Star = ({ starPosition, colour, text }) => {
   const sphereRef = useRef();
@@ -31,8 +32,8 @@ const Star = ({ starPosition, colour, text }) => {
         />
       </EffectComposer>
       <group>
-        <RigidBody>
-          <Sphere ref={sphereRef} position={starPosition} args={[4.5, 45, 45]}>
+        <RigidBody position={starPosition} args={[7.5]}>
+          <Sphere ref={sphereRef} args={[7.5, 75, 75]}>
             <meshPhongMaterial
               color={colour}
               // eslint-disable-next-line react/no-unknown-property
@@ -44,8 +45,12 @@ const Star = ({ starPosition, colour, text }) => {
           </Sphere>
         </RigidBody>
         <StarSigns
-          position={[starPosition[0], 0.3, starPosition[2] + 6]}
+          position={[starPosition[0], 0.3, starPosition[2] + 24]}
           text={text}
+        />
+        <Portal
+          position={[starPosition[0], 3, starPosition[2] + 15]}
+          portalName={text}
         />
         {/* <StarLight sphereRef={sphereRef}/> */}
       </group>
