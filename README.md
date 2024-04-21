@@ -15,3 +15,16 @@ and replace the usage of it with `THREE.sRGBEncoding`.
 ![image](https://github.com/zachary-rihia/portfolio/assets/83677402/09545131-d8fd-4a26-b1ac-9065a9b5a20c)
 
 ShaderPass and RenderPass from `@react-three\postprocessing` does not exist.
+
+
+
+
+### Assests
+
+- [Bookcase](https://www.blenderkit.com/get-blenderkit/493ffb8d-24b6-488c-a977-b70929287ce2/)
+- [Chair](https://www.blenderkit.com/get-blenderkit/50fd6cc2-418d-468e-a002-d74650259470/)
+- [Coffee](https://www.blenderkit.com/get-blenderkit/8b1d81c8-57b7-45ed-b427-4c43ca300dd7/)
+- [FirePlace](https://www.blenderkit.com/get-blenderkit/e5c873f2-3b92-4704-b339-ca58997365f5/)
+- [Table](https://www.blenderkit.com/get-blenderkit/9d6e6e2e-94c7-4fe4-89f4-a4edbeb6446f/)
+
+
