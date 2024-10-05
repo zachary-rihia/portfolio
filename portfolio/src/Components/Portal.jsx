@@ -1,32 +1,43 @@
 import { useContext } from "react";
-import { Cylinder } from "@react-three/drei";
 import PropTypes from "prop-types";
 import { RigidBody, CuboidCollider } from "@react-three/rapier";
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
+import { Box } from "@react-three/drei";
 
 import { SceneContext } from "../Context/SceneProviderContext";
 
-const Portal = ({ position, portalName }) => {
+const Portal = ({args, position, portalName }) => {
   const { setCurrentScene } = useContext(SceneContext);
 
   return (
     <group>
+      <EffectComposer> 
+        <Bloom
+          luminanceThreshold={0.1}
+          luminanceSmoothing={1}
+          intensity={2}
+        />
+      </EffectComposer>
+
+      <Box args={args.map(arg => arg * 2)} position={position}>
+        <meshStandardMaterial color="#5EBCFF" emissive="#5EBCFF" emissiveIntensity={3} />
+      </Box>
+
       <RigidBody type="fixed">
         <CuboidCollider
-          args={[1, 1, 1]}
-          position={[position[0], position[1] - 1.8, position[2] + 2]}
+          args={args}
+          position={position}
           onCollisionEnter={() => {
             setCurrentScene(portalName);
           }}
         />
-        <Cylinder args={[3, 3, 6]} position={position}>
-          <meshPhongMaterial color="#78BDF5" />
-        </Cylinder>
       </RigidBody>
     </group>
   );
 };
 
 Portal.propTypes = {
+  args: PropTypes.arrayOf(PropTypes.number).isRequired,
   position: PropTypes.arrayOf(PropTypes.number).isRequired,
   portalName: PropTypes.string.isRequired,
 };

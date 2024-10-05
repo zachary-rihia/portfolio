@@ -3,6 +3,7 @@ import * as THREE from "three";
 import { Capsule } from "@react-three/drei";
 import { RigidBody, CapsuleCollider } from "@react-three/rapier";
 import { useFrame, useThree } from "@react-three/fiber";
+import PropTypes from "prop-types";
 
 import { usePlayerControls } from "../../Hooks/usePlayerControls";
 import CharacterPositionContext from "../../Context/CharacterPositionContext";
@@ -12,11 +13,27 @@ const direction = new THREE.Vector3();
 const frontVector = new THREE.Vector3();
 const sideVector = new THREE.Vector3();
 
-const Character = () => {
-  const playerRef = useRef();
+const Character = ({ characterPOS, sceneName }) => {
+  const playerRef = useRef(); 
   const { camera } = useThree();
   const { forward, backward, left, right, jump } = usePlayerControls();
   const { setPosition } = useContext(CharacterPositionContext);
+
+  // useEffect(() => {
+  //   const handleWheel = (event) => {
+  //     // Adjust the camera's FOV based on the scroll direction
+  //     camera.fov = Math.min(Math.max(camera.fov - event.deltaY * 0.05, 15), 75);
+  //     camera.updateProjectionMatrix();
+  //   };
+
+  //   // Add the wheel event listener to the window
+  //   window.addEventListener("wheel", handleWheel);
+
+  //   // Clean up the event listener when the component unmounts
+  //   return () => {
+  //     window.removeEventListener("wheel", handleWheel);
+  //   };
+  // }, [camera]);
 
   // The hook is called on each frame of the animation. Inside this hook, the player's position and linear velocity are updated.
   useFrame(() => {
@@ -29,15 +46,18 @@ const Character = () => {
       playerRef.current.translation().z
     );
 
-    // Update the camera's position to follow the character
-    camera.position.set(
-      characterPosition.x + 9, // Offset in the x-axis
-      characterPosition.y + 18, // Offset in the y-axis
-      characterPosition.z + 12 // Offset in the z-axis
-    );
+    // Update the camera's position to follow the character depending on the scene
+    if (sceneName === "mainScene"){
+      camera.position.set(
+          characterPosition.x + 9, // Offset in the x-axis
+          characterPosition.y + 18, // Offset in the y-axis
+          characterPosition.z + 12 // Offset in the z-axis
+      );
 
-    // Make the camera look at the character
-    camera.lookAt(characterPosition);
+      // Make the camera look at the character
+      camera.lookAt(characterPosition);
+    }
+    
 
     // Get the current linear velocity of the player.
     const velocity = playerRef.current.linvel();
@@ -72,12 +92,17 @@ const Character = () => {
 
   return (
     <group>
-      <RigidBody ref={playerRef} position={[0, 6, -33]}>
+      <RigidBody ref={playerRef} position={characterPOS}>
         <CapsuleCollider args={[0.8, 0.4]} />
         <Capsule></Capsule>
       </RigidBody>
     </group>
   );
 };
+
+Character.propTypes = {
+  characterPOS: PropTypes.arrayOf(PropTypes.number).isRequired,
+  sceneName: PropTypes.string.isRequired,
+}
 
 export default Character;

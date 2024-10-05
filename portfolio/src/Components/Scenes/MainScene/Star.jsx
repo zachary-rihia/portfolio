@@ -6,12 +6,12 @@ import { Sphere } from "@react-three/drei";
 import { RigidBody } from "@react-three/rapier";
 
 // Effects
-// import StarLight from "../Effects/StarLight";
+import StarLight from "../../Effects/StarLight";
 
 import StarSigns from "../../Signs/StarSigns";
 import Portal from "../../Portal";
 
-const Star = ({ starPosition, colour, text }) => {
+const Star = ({ starPosition, colour, text, godrays, portal }) => {
   const sphereRef = useRef();
 
   useFrame(() => {
@@ -20,6 +20,8 @@ const Star = ({ starPosition, colour, text }) => {
       sphereRef.current.rotation.y -= 0.3;
     }
   });
+
+  
 
   return (
     <>
@@ -48,11 +50,13 @@ const Star = ({ starPosition, colour, text }) => {
           position={[starPosition[0], 0.3, starPosition[2] + 24]}
           text={text}
         />
-        <Portal
+        {portal && <Portal
+          args={[2.1, 2.9, 0]}
           position={[starPosition[0], 3, starPosition[2] + 15]}
           portalName={text}
-        />
+        /> }
         {/* <StarLight sphereRef={sphereRef}/> */}
+        {godrays && <StarLight sphereRef={sphereRef} />}
       </group>
     </>
   );
@@ -62,6 +66,8 @@ Star.propTypes = {
   starPosition: PropTypes.arrayOf(PropTypes.number).isRequired,
   colour: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  godrays: PropTypes.bool.isRequired,
+  portal: PropTypes.bool.isRequired,
 };
 
 export default Star;
