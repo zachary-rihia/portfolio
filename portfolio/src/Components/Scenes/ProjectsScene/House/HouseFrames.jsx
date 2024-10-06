@@ -3,8 +3,6 @@ import { useFrame } from "@react-three/fiber";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { Box } from "@react-three/drei";
 import { RigidBody } from "@react-three/rapier";
-import * as THREE from 'three';
-import { CSG } from 'three-csg-ts';
 
 import Portal from "../../../Portal";
 

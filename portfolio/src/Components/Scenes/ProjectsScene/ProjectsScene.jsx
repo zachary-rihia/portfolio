@@ -10,7 +10,7 @@ import Background from "../MainScene/Background";
 import Star from "../MainScene/Star";
 
 //House Objects
-import HouseFrames from "./House/HouseFrames";
+import House from "./House/House";
 
 // Character
 import Character from "../../Character/Character";
@@ -32,7 +32,7 @@ const ProjectsScene = () => {
       <Physics gravity={[0, -9.81, 0]} debug>
         <Background />
         <Floor />
-        <HouseFrames />
+        <House />
         <Character characterPOS={[-6, 1.8, 2]} sceneName="projectsScene"/>
         <Star
           starPosition={[21, 9, -10]}
