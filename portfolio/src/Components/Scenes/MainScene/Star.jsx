@@ -56,7 +56,7 @@ const Star = ({ starPosition, colour, text, godrays, portal }) => {
           portalName={text}
         /> }
         {/* <StarLight sphereRef={sphereRef}/> */}
-        {godrays && <StarLight sphereRef={sphereRef} />}
+        {/* {godrays && <StarLight sphereRef={sphereRef} />} */}
       </group>
     </>
   );

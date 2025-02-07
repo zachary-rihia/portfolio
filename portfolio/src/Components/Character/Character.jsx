@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext, useRef, useEffect } from "react";
 import * as THREE from "three";
 import { Capsule } from "@react-three/drei";
 import { RigidBody, CapsuleCollider } from "@react-three/rapier";
@@ -13,31 +13,43 @@ const direction = new THREE.Vector3();
 const frontVector = new THREE.Vector3();
 const sideVector = new THREE.Vector3();
 
-const Character = ({ characterPOS, sceneName }) => {
+const Character = ({ characterPOS, sceneName, disableMovement }) => {
   const playerRef = useRef(); 
   const { camera } = useThree();
   const { forward, backward, left, right, jump } = usePlayerControls();
   const { setPosition } = useContext(CharacterPositionContext);
 
-  // useEffect(() => {
-  //   const handleWheel = (event) => {
-  //     // Adjust the camera's FOV based on the scroll direction
-  //     camera.fov = Math.min(Math.max(camera.fov - event.deltaY * 0.05, 15), 75);
-  //     camera.updateProjectionMatrix();
-  //   };
+  useEffect(() => {
+    // const handleWheel = (event) => {
+    //   // Adjust the camera's FOV based on the scroll direction
+    //   camera.fov = Math.min(Math.max(camera.fov - event.deltaY * 0.05, 15), 75);
+    //   camera.updateProjectionMatrix();
+    // };
 
-  //   // Add the wheel event listener to the window
-  //   window.addEventListener("wheel", handleWheel);
+    // // Add the wheel event listener to the window
+    // window.addEventListener("wheel", handleWheel);
 
-  //   // Clean up the event listener when the component unmounts
-  //   return () => {
-  //     window.removeEventListener("wheel", handleWheel);
-  //   };
-  // }, [camera]);
+    // // Clean up the event listener when the component unmounts
+    // return () => {
+    //   window.removeEventListener("wheel", handleWheel);
+    // };
+
+    const handleKeyDown = (event) => {
+      if (disableMovement) {
+        event.preventDefault(); // Block movement inputs
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+
+  }, [disableMovement]);
 
   // The hook is called on each frame of the animation. Inside this hook, the player's position and linear velocity are updated.
   useFrame(() => {
-    if (!playerRef.current) return;
+    if (!playerRef.current || disableMovement) return;
 
     // Ensure the character's position is a THREE.Vector3 object
     const characterPosition = new THREE.Vector3(
@@ -91,7 +103,7 @@ const Character = ({ characterPOS, sceneName }) => {
   });
 
   return (
-    <group>
+    <group visible={!disableMovement}>
       <RigidBody ref={playerRef} position={characterPOS}>
         <CapsuleCollider args={[0.8, 0.4]} />
         <Capsule></Capsule>
@@ -103,6 +115,7 @@ const Character = ({ characterPOS, sceneName }) => {
 Character.propTypes = {
   characterPOS: PropTypes.arrayOf(PropTypes.number).isRequired,
   sceneName: PropTypes.string.isRequired,
+  disableMovement: PropTypes.bool,
 }
 
 export default Character;

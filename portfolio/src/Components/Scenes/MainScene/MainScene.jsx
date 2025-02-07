@@ -16,10 +16,10 @@ const MainScene = () => {
     <>
       <OrbitControls />
       <ambientLight />
-      <Background />
+      {/* <Background /> */}
       <Physics gravity={[0, -9.81, 0]} debug>
         <Floor />
-        <Character characterPOS={[0, 6, -33]} sceneName="mainScene"/>
+        <Character characterPOS={[0, 6, -33]} sceneName="mainScene" disableMovement={false}/>
         <Star
           starPosition={[24, 12, -30]}
           colour={"#F3F673"}

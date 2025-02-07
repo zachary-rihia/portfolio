@@ -1,50 +1,24 @@
-import { Box } from "@react-three/drei";
-import { RigidBody } from "@react-three/rapier";
+import BookshelfFrame from "./BookshelfFrame";
+import Book from "./Book";
 
-function Bookshelf() {
+const Bookshelf = () => {
 	return (
 		<>
-			<group>
-				<RigidBody type="fixed" colliders="cuboid">
-					{/* Bookshelf Frame */}
-					<Box args={[2, 3, 0.2]} position={[-6, 1.9, -4.4]}>
-						<meshStandardMaterial color="saddlebrown" />
-					</Box>
+			<ambientLight intensity={0.5} />
+			<directionalLight position={[5, 10, 5]} intensity={1} />
 
-					{/* Left Side Panel */}
-					<Box args={[0.1, 3, 0.5]} position={[-6.95, 1.9, -4.1]}>
-						<meshStandardMaterial color="saddlebrown" />
-					</Box>
+			{/* Render the Bookshelf frame */}
+			<BookshelfFrame position={[0.42, 0.5, 0.1]}/>
 
-					{/* Right Side Panel */}
-					<Box args={[0.1, 3, 0.5]} position={[-5, 1.9, -4.1]}>
-						<meshStandardMaterial color="saddlebrown" />
-					</Box>
-
-					{/* Top Panel */}
-					<Box args={[2, 0.1, 0.5]} position={[-6, 3.4, -4.1]}>
-						<meshStandardMaterial color="saddlebrown" />
-					</Box>
-
-					{/* Bottom Panel */}
-					<Box args={[2, 0.1, 0.5]} position={[-6, 0.4, -4.1]}>
-						<meshStandardMaterial color="black" />
-					</Box>
-
-					{/* Shelves */}
-					<Box args={[1.9, 0.1, 0.5]} position={[-6, 2.7, -4.1]}>
-						<meshStandardMaterial color="black" />
-					</Box>
-					<Box args={[1.9, 0.1, 0.5]} position={[-6, 1.9, -4.1]}>
-						<meshStandardMaterial color="black" />
-					</Box>
-					<Box args={[1.9, 0.1, 0.5]} position={[-6, 1.1, -4.1]}>
-						<meshStandardMaterial color="black" />
-					</Box>
-				</RigidBody>
-			</group>
+			{/* Render books in the shelf */}
+			<Book position={[-6.6, 2.46, -4]} />
+			<Book position={[-6.3, 2.46, -4]} />
+			<Book position={[-5.9, 2.46, -4]} />
+			<Book position={[-6.7, 1.66, -4]} />
+			<Book position={[-6.3, 1.66, -4]} />
+			<Book position={[-5.9, 1.66, -4]} />
 		</>
 	);
-}
+};
 
 export default Bookshelf;
