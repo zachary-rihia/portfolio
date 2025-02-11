@@ -19,9 +19,10 @@ const ProjectsScene = () => {
 	const [isLoaded, setIsLoaded] = useState(false);
 	const { camera } = useThree();
 	const [isFocused, setIsFocused] = useState(false);
-	const [insideHitbox, setInsideHitbox] = useState(false); // Track if the player is inside the hitbox
+	const [insideHitbox, setInsideHitbox] = useState(false); // Track if the character is inside the hitbox
 	const [hideCharacter, setHideCharacter] = useState(false); // Track character visibility
 	const [disableMovement, setDisableMovement] = useState(false); // Disable movement
+	const [characterPosition, setCharacterPosition] = useState(new Vector3(-6, 1.8, 2));
 
 	// Define positions as Vector3 objects
 	const initialCameraPosition = new Vector3(-0.1, 3.6, 7.8);
@@ -39,6 +40,9 @@ const ProjectsScene = () => {
 			setIsFocused((prev) => {
 				const newFocusState = !prev;
 
+				// Set character POS for bookshelf zoom out 
+				setCharacterPosition(new Vector3(-5.7, 2.7, -1)) // (Temp placement)
+				
 				// Hide character and disable movement when zoomed in
 				setHideCharacter(newFocusState);
 				setDisableMovement(newFocusState);
@@ -99,7 +103,7 @@ const ProjectsScene = () => {
 				<House />
 				{!hideCharacter && (
 					<Character
-						characterPOS={[-6, 1.8, 2]}
+						characterPOS={characterPosition.toArray()}
 						sceneName="projectsScene"
 						disableMovement={disableMovement}
 					/>
