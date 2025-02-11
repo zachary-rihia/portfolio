@@ -33,14 +33,6 @@ const ProjectsScene = () => {
 		setIsLoaded(true);
 	};
 
-	// if (!isFocused) {
-	// 	camera.position.set(-0.1, 3.6, 7.8);
-	// 	camera.lookAt(0, 3.3, 0);
-	// }
-
-	// camera.position.set(-5.7, 2.8, -1); // bookshelfCamPosition
-	// camera.lookAt(-5.7, 2.5, -4.1); // bookshelfPosition
-
 	// Function to toggle focus on click (only if inside hitbox)
 	const handleKeyDown = (event) => {
 		if (insideHitbox && (event.key === " " || event.key === "e" || event.key === "f")) {

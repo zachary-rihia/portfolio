@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { RigidBody, CuboidCollider } from "@react-three/rapier";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
@@ -8,6 +8,30 @@ import { SceneContext } from "../Context/SceneProviderContext";
 
 const Portal = ({args, position, portalName }) => {
   const { setCurrentScene } = useContext(SceneContext);
+  const [insideHitbox, setInsideHitbox] = useState(false); 
+
+    // Function to toggle focus on click (only if inside hitbox)
+    const handleKeyDown = (event) => {
+      if (insideHitbox && (event.key === " " || event.key === "e" || event.key === "f")) {
+        setCurrentScene(portalName)
+      }
+    };
+  
+    // Effect to listen for clicks
+    useEffect(() => {
+      window.addEventListener("keydown", handleKeyDown);
+      return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [insideHitbox]);
+  
+    // Function to update hitbox status
+    const handleEnterHitbox = () => {
+      setInsideHitbox(true);
+    };
+  
+    const handleExitHitbox = () => {
+      setInsideHitbox(false);
+    };
+  
 
   return (
     <group>
@@ -27,9 +51,8 @@ const Portal = ({args, position, portalName }) => {
         <CuboidCollider
           args={args}
           position={position}
-          onCollisionEnter={() => {
-            setCurrentScene(portalName);
-          }}
+          onCollisionEnter={handleEnterHitbox}
+					onCollisionExit={handleExitHitbox}
         />
       </RigidBody>
     </group>
