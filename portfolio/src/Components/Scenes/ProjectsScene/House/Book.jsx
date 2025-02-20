@@ -1,30 +1,32 @@
 import { Box } from "@react-three/drei";
 import { useState } from "react";
-import { useThree } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 import { Vector3 } from "three";
 import { RigidBody } from "@react-three/rapier";
 
-
-const Book = ({ position }) => {
+const Book = ({ position, isSelected, onSelect, camera }) => {
 	const [hovered, setHovered] = useState(false);
-	const [selected, setSelected] = useState(false);
-	const { camera } = useThree();
+	const [currentPosition, setCurrentPosition] = useState(new Vector3(...position));
 
-	// Zoom in on the book when selected
-	const handleClick = () => {
-		// setSelected(true);
-		// const zoomPosition = new Vector3(position[0], position[1], position[2] + 1);
-		// camera.position.lerp(zoomPosition, 0.2);
-	};
+	useFrame(() => {
+		const targetPosition = isSelected
+			? new Vector3(camera.position.x, camera.position.y - 0.15, camera.position.z - 1) // Center in view
+			: new Vector3(...position); // Return to original position
+
+		setCurrentPosition((prev) => prev.lerp(targetPosition, 0.1));
+	});
+
+	// Determine book size
+	const bookSize = isSelected ? [, 0.6, 0.6] : [0.15, 0.6, 0.4];
 
 	return (
 		<RigidBody type="fixed" colliders="cuboid">
 			<Box
-				args={[0.15, 0.6, 0.4]} // Book dimensions
-				position={position}
+				args={bookSize}
+				position={currentPosition.toArray()}
 				onPointerOver={() => setHovered(true)}
 				onPointerOut={() => setHovered(false)}
-				onClick={handleClick}
+				onClick={onSelect}
 			>
 				<meshStandardMaterial color={hovered ? "lightblue" : "darkblue"} />
 			</Box>
