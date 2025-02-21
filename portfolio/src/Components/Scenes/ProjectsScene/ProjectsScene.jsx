@@ -32,9 +32,9 @@ const ProjectsScene = () => {
 	const bookshelfPosition = new Vector3(-5.7, 2.5, -4.1);
 	const bookshelfCamPosition = new Vector3(-5.7, 2.8, -1);
 
-	const handleLoadComplete = () => {
-		setIsLoaded(true);
-	};
+	// const handleLoadComplete = () => {
+	// 	setIsLoaded(true);
+	// };
 
 	// Function to toggle focus on click (only if inside hitbox)
 	const handleKeyDown = (event) => {
@@ -74,23 +74,6 @@ const ProjectsScene = () => {
 			camera.lookAt(initialLookAtPosition);
 		}
 	});
-
-	const adjustCam = () => {
-		setIsFocused(true);
-		if (isFocused) {
-			camera.position.lerp(-5.7, 2.8, -1, 0.05); // Smooth transition to bookshelf view
-			camera.lookAt(-5.7, 2.5, -4.1); // Focus on bookshelf
-		} else {
-			// Smooth transition back to the original position
-			camera.position.lerp(initialCameraPosition, 0.05);
-			camera.lookAt(initialLookAtPosition);
-		}
-	};
-
-	// Toggle focus state
-	const toggleFocus = () => {
-		setIsFocused((prev) => !prev); // Toggle focus
-	};
 
 	return (
 		<>

@@ -17,7 +17,7 @@ const Book = ({ position, isSelected, onSelect, camera }) => {
 	});
 
 	// Determine book size
-	const bookSize = isSelected ? [, 0.6, 0.6] : [0.15, 0.6, 0.4];
+	const bookSize = isSelected ? [1.2, 0.6, 0.6] : [0.15, 0.6, 0.4];
 
 	return (
 		<RigidBody type="fixed" colliders="cuboid">
