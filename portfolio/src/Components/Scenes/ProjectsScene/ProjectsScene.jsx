@@ -46,11 +46,12 @@ const ProjectsScene = () => {
 				const newFocusState = !prev;
 
 				// Set character POS for bookshelf zoom out
-				setCharacterPosition(new Vector3(-5.7, 2.7, -1)); // (Temp placement)
+				setCharacterPosition(new Vector3(-5.7, 2.7, -2.4)); // (Temp placement)
 
 				// Hide character and disable movement when zoomed in
 				setHideCharacter(newFocusState);
 				setDisableMovement(newFocusState);
+				setInsideHitbox(newFocusState);
 
 				return newFocusState;
 			});
@@ -89,10 +90,11 @@ const ProjectsScene = () => {
 				)}
 
 				<CuboidCollider
-					args={[1, 1, 1]}
+					args={[1.5, 2, 1.5]}
 					position={bookshelfPosition}
-					onCollisionEnter={() => setInsideHitbox(true)}
-					onCollisionExit={() => setInsideHitbox(false)}
+					sensor={true} // Ensures we detect collisions without physical interaction
+					onIntersectionEnter={() => setInsideHitbox(true)}
+					onIntersectionExit={() => setInsideHitbox(false)}
 				/>
 
 				<Star
