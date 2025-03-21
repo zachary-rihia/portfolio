@@ -84,7 +84,7 @@ const ProjectsScene = () => {
 				{!hideCharacter && (
 					<Character
 						characterPOS={characterPosition.toArray()}
-						sceneName="projectsScene"
+						sceneName="Projects"
 						disableMovement={disableMovement}
 					/>
 				)}
