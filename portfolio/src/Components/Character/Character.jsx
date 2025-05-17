@@ -114,7 +114,7 @@ const Character = ({ characterPOS, sceneName, disableMovement }) => {
 	});
 
 	return (
-		<group visible={!disableMovement}>
+		<group>
 			<RigidBody ref={playerRef} position={characterPOS}>
 				<CapsuleCollider args={[0.8, 0.4]} />
 				<Capsule></Capsule>
