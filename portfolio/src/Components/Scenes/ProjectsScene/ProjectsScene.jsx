@@ -40,7 +40,7 @@ const ProjectsScene = () => {
 	const handleKeyDown = (event) => {
 		if (
 			insideHitbox &&
-			(event.key === " " || event.key === "e" || event.key === "f")
+			([" ", "e", "f"].includes(event.key))
 		) {
 			setIsFocused((prev) => {
 				const newFocusState = !prev;
@@ -84,7 +84,7 @@ const ProjectsScene = () => {
 				{!hideCharacter && (
 					<Character
 						characterPOS={characterPosition.toArray()}
-						sceneName="projectsScene"
+						sceneName="Projects"
 						disableMovement={disableMovement}
 					/>
 				)}
