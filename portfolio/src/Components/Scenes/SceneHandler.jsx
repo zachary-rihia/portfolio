@@ -3,6 +3,7 @@ import { SceneContext } from "../../Context/SceneProviderContext";
 
 import MainScene from "./MainScene/MainScene";
 import ProjectsScene from "./ProjectsScene/ProjectsScene";
+import AboutMe from "./MurimScene/AboutMeScene";
 
 const SceneHandler = () => {
   const { currentScene } = useContext(SceneContext);
@@ -15,6 +16,7 @@ const SceneHandler = () => {
     <>
       {currentScene === "Main" && <MainScene />}
       {currentScene === "Projects" && <ProjectsScene />}
+      {currentScene === "About me" && <AboutMe />}
     </>
   );
 };

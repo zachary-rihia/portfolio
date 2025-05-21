@@ -12,7 +12,7 @@ const Portal = ({args, position, portalName }) => {
 
     // Function to toggle focus on click (only if inside hitbox)
     const handleKeyDown = (event) => {
-      if (insideHitbox && (event.key === " " || event.key === "e" || event.key === "f")) {
+      if (insideHitbox && [" ", "e", "f"].includes(event.key)) {
         setCurrentScene(portalName)
       }
     };
