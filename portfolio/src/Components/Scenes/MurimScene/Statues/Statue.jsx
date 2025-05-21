@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
 import { Box } from "@react-three/drei";
-import { RigidBody, CuboidCollider } from "@react-three/rapier";
+import { RigidBody } from "@react-three/rapier";
 import PropTypes from "prop-types";
 
-const Statue = ({ statueArgs, plateArgs, position }) => {
+const Statue = ({ statueArgs, position }) => {
 
 	return (
 		<>
@@ -20,6 +19,5 @@ export default Statue;
 
 Statue.propTypes = {
 	statueArgs: PropTypes.arrayOf(PropTypes.number).isRequired,
-	plateArgs: PropTypes.arrayOf(PropTypes.number).isRequired,
 	position: PropTypes.arrayOf(PropTypes.number).isRequired,
 };

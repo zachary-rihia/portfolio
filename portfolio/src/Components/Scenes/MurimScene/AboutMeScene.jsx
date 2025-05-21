@@ -28,7 +28,6 @@ const AboutMe = () => {
 	const { isVisible, showDialogueOnce, hideDialogue } = useDialogue();
 
 	const statueArgs = [3, 6.6, 6.6];
-	const plateArgs = [1, 1, 1];
 
 	// const handleLoadComplete = () => {
 	// 	setIsLoaded(true);
@@ -81,7 +80,6 @@ const AboutMe = () => {
 					/>
 					<Statue
 						statueArgs={statueArgs}
-						plateArgs={plateArgs}
 						position={[24, 1, 21]}
 					/>
 				</group>
@@ -100,7 +98,6 @@ const AboutMe = () => {
 					/>
 					<Statue
 						statueArgs={statueArgs}
-						plateArgs={plateArgs}
 						position={[-24, 1, 21]}
 					/>
 				</group>
@@ -121,7 +118,6 @@ const AboutMe = () => {
 					/>
 					<Statue
 						statueArgs={statueArgs}
-						plateArgs={plateArgs}
 						position={[24, 1, 45]}
 					/>
 				</group>
@@ -142,7 +138,6 @@ const AboutMe = () => {
 					/>
 					<Statue
 						statueArgs={statueArgs}
-						plateArgs={plateArgs}
 						position={[-24, 1, 45]}
 					/>
 				</group>
@@ -163,7 +158,6 @@ const AboutMe = () => {
 					/>
 					<Statue
 						statueArgs={statueArgs}
-						plateArgs={plateArgs}
 						position={[24, 1, 69]}
 					/>
 				</group>
@@ -184,7 +178,6 @@ const AboutMe = () => {
 					/>
 					<Statue
 						statueArgs={statueArgs}
-						plateArgs={plateArgs}
 						position={[-24, 1, 69]}
 					/>
 				</group>
@@ -192,7 +185,6 @@ const AboutMe = () => {
 				<group>
 					<Statue
 						statueArgs={[12, 2, 3]}
-						plateArgs={[2, 2, 2]}
 						position={[1, 1, 81]}
 					/>
 
