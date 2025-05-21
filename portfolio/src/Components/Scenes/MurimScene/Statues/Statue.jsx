@@ -10,10 +10,6 @@ const Statue = ({ statueArgs, plateArgs, position }) => {
 			<group>
 				<RigidBody type="fixed" colliders="cuboid">
 					<Box args={statueArgs} position={position}></Box>
-					<Box
-						args={plateArgs}
-						position={[position[0] - 3, position[1], position[2]]}
-					></Box>
 				</RigidBody>
 			</group>
 		</>
