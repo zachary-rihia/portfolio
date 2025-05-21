@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { Physics, RigidBody, CuboidCollider } from "@react-three/rapier";
+import { Physics, CuboidCollider } from "@react-three/rapier";
 
 import { useDialogue } from "../../../Context/DialogueProviderContext";
-import dialogueData from "../../data/dialogue.json";
+import dialogueData from "../../data/statueDialogue.json";
 
 // Floor
 import Floor from "../../Floor";
@@ -17,12 +17,18 @@ import Portal from "../../Portal";
 import Statue from "./Statues/Statue";
 import FloatingPlane from "./Statues/FloatingPlane";
 
+// Bug where the pathfinder hitbox is being read as soon as you go in.
+// A little fix is that you have to interact with any statue.
+// Other than that I'm not too sure.
 const AboutMe = () => {
 	// const [isLoaded, setIsLoaded] = useState(false);
 	// const { camera } = useThree();
 	const [activeDialogueNum, setActiveDialogueNum] = useState(null);
 	const [insideHitbox, setInsideHitbox] = useState(false);
 	const { isVisible, showDialogueOnce, hideDialogue } = useDialogue();
+
+	const statueArgs = [3, 6.6, 6.6];
+	const plateArgs = [1, 1, 1];
 
 	// const handleLoadComplete = () => {
 	// 	setIsLoaded(true);
@@ -64,29 +70,48 @@ const AboutMe = () => {
 				<group>
 					<CuboidCollider
 						args={[1.5, 2, 1.5]}
-						position={[21, 1, 30]}
+						position={[21, 1, 21]}
 						sensor={true} // Ensures we detect collisions without physical interaction
 						onIntersectionEnter={() => {
-							setInsideHitbox(true), setActiveDialogueNum("statue1");
+							setInsideHitbox(true), setActiveDialogueNum("architect");
 						}}
 						onIntersectionExit={() => {
 							setInsideHitbox(false), setActiveDialogueNum(null);
 						}}
 					/>
 					<Statue
-						statueArgs={[3, 6.6, 6.6]}
-						plateArgs={[1, 1, 1]}
-						position={[24, 1, 30]}
+						statueArgs={statueArgs}
+						plateArgs={plateArgs}
+						position={[24, 1, 21]}
 					/>
 				</group>
 
 				<group>
 					<CuboidCollider
 						args={[1.5, 2, 1.5]}
-						position={[21, 1, 54]}
+						position={[-21, 1, 21]}
 						sensor={true} // Ensures we detect collisions without physical interaction
 						onIntersectionEnter={() => {
-							setInsideHitbox(true), setActiveDialogueNum("statue2");
+							setInsideHitbox(true), setActiveDialogueNum("chronicler");
+						}}
+						onIntersectionExit={() => {
+							setInsideHitbox(false), setActiveDialogueNum(null);
+						}}
+					/>
+					<Statue
+						statueArgs={statueArgs}
+						plateArgs={plateArgs}
+						position={[-24, 1, 21]}
+					/>
+				</group>
+
+				<group>
+					<CuboidCollider
+						args={[1.5, 2, 1.5]}
+						position={[21, 1, 45]}
+						sensor={true} // Ensures we detect collisions without physical interaction
+						onIntersectionEnter={() => {
+							setInsideHitbox(true), setActiveDialogueNum("seeker");
 						}}
 						onIntersectionExit={() => {
 							setInsideHitbox(false),
@@ -95,9 +120,72 @@ const AboutMe = () => {
 						}}
 					/>
 					<Statue
-						statueArgs={[3, 6.6, 6.6]}
-						plateArgs={[1, 1, 1]}
-						position={[24, 1, 54]}
+						statueArgs={statueArgs}
+						plateArgs={plateArgs}
+						position={[24, 1, 45]}
+					/>
+				</group>
+
+				<group>
+					<CuboidCollider
+						args={[1.5, 2, 1.5]}
+						position={[-21, 1, 45]}
+						sensor={true} // Ensures we detect collisions without physical interaction
+						onIntersectionEnter={() => {
+							setInsideHitbox(true), setActiveDialogueNum("duelist");
+						}}
+						onIntersectionExit={() => {
+							setInsideHitbox(false),
+								hideDialogue(),
+								setActiveDialogueNum(null);
+						}}
+					/>
+					<Statue
+						statueArgs={statueArgs}
+						plateArgs={plateArgs}
+						position={[-24, 1, 45]}
+					/>
+				</group>
+
+				<group>
+					<CuboidCollider
+						args={[1.5, 2, 1.5]}
+						position={[21, 1, 69]}
+						sensor={true} // Ensures we detect collisions without physical interaction
+						onIntersectionEnter={() => {
+							setInsideHitbox(true), setActiveDialogueNum("dreamsmith");
+						}}
+						onIntersectionExit={() => {
+							setInsideHitbox(false),
+								hideDialogue(),
+								setActiveDialogueNum(null);
+						}}
+					/>
+					<Statue
+						statueArgs={statueArgs}
+						plateArgs={plateArgs}
+						position={[24, 1, 69]}
+					/>
+				</group>
+
+				<group>
+					<CuboidCollider
+						args={[1.5, 2, 1.5]}
+						position={[-21, 1, 69]}
+						sensor={true} // Ensures we detect collisions without physical interaction
+						onIntersectionEnter={() => {
+							setInsideHitbox(true), setActiveDialogueNum("pathfinder");
+						}}
+						onIntersectionExit={() => {
+							setInsideHitbox(false),
+								hideDialogue(),
+								setActiveDialogueNum(null);
+						}}
+					/>
+					<Statue
+						statueArgs={statueArgs}
+						plateArgs={plateArgs}
+						position={[-24, 1, 69]}
 					/>
 				</group>
 
