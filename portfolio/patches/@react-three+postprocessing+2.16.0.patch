@@ -1,0 +1,689 @@
+diff --git a/node_modules/@react-three/postprocessing/LICENSE b/node_modules/@react-three/postprocessing/LICENSE
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/README.md b/node_modules/@react-three/postprocessing/README.md
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/EffectComposer.cjs b/node_modules/@react-three/postprocessing/dist/EffectComposer.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/EffectComposer.cjs.map b/node_modules/@react-three/postprocessing/dist/EffectComposer.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/EffectComposer.d.ts b/node_modules/@react-three/postprocessing/dist/EffectComposer.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/EffectComposer.js b/node_modules/@react-three/postprocessing/dist/EffectComposer.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/EffectComposer.js.map b/node_modules/@react-three/postprocessing/dist/EffectComposer.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/Selection.cjs b/node_modules/@react-three/postprocessing/dist/Selection.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/Selection.cjs.map b/node_modules/@react-three/postprocessing/dist/Selection.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/Selection.d.ts b/node_modules/@react-three/postprocessing/dist/Selection.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/Selection.js b/node_modules/@react-three/postprocessing/dist/Selection.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/Selection.js.map b/node_modules/@react-three/postprocessing/dist/Selection.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ASCII.cjs b/node_modules/@react-three/postprocessing/dist/effects/ASCII.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ASCII.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/ASCII.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ASCII.d.ts b/node_modules/@react-three/postprocessing/dist/effects/ASCII.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ASCII.js b/node_modules/@react-three/postprocessing/dist/effects/ASCII.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ASCII.js.map b/node_modules/@react-three/postprocessing/dist/effects/ASCII.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Autofocus.cjs b/node_modules/@react-three/postprocessing/dist/effects/Autofocus.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Autofocus.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/Autofocus.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Autofocus.d.ts b/node_modules/@react-three/postprocessing/dist/effects/Autofocus.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Autofocus.js b/node_modules/@react-three/postprocessing/dist/effects/Autofocus.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Autofocus.js.map b/node_modules/@react-three/postprocessing/dist/effects/Autofocus.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Bloom.cjs b/node_modules/@react-three/postprocessing/dist/effects/Bloom.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Bloom.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/Bloom.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Bloom.d.ts b/node_modules/@react-three/postprocessing/dist/effects/Bloom.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Bloom.js b/node_modules/@react-three/postprocessing/dist/effects/Bloom.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Bloom.js.map b/node_modules/@react-three/postprocessing/dist/effects/Bloom.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/BrightnessContrast.cjs b/node_modules/@react-three/postprocessing/dist/effects/BrightnessContrast.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/BrightnessContrast.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/BrightnessContrast.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/BrightnessContrast.d.ts b/node_modules/@react-three/postprocessing/dist/effects/BrightnessContrast.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/BrightnessContrast.js b/node_modules/@react-three/postprocessing/dist/effects/BrightnessContrast.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/BrightnessContrast.js.map b/node_modules/@react-three/postprocessing/dist/effects/BrightnessContrast.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ChromaticAberration.cjs b/node_modules/@react-three/postprocessing/dist/effects/ChromaticAberration.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ChromaticAberration.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/ChromaticAberration.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ChromaticAberration.d.ts b/node_modules/@react-three/postprocessing/dist/effects/ChromaticAberration.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ChromaticAberration.js b/node_modules/@react-three/postprocessing/dist/effects/ChromaticAberration.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ChromaticAberration.js.map b/node_modules/@react-three/postprocessing/dist/effects/ChromaticAberration.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ColorAverage.cjs b/node_modules/@react-three/postprocessing/dist/effects/ColorAverage.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ColorAverage.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/ColorAverage.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ColorAverage.d.ts b/node_modules/@react-three/postprocessing/dist/effects/ColorAverage.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ColorAverage.js b/node_modules/@react-three/postprocessing/dist/effects/ColorAverage.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ColorAverage.js.map b/node_modules/@react-three/postprocessing/dist/effects/ColorAverage.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ColorDepth.cjs b/node_modules/@react-three/postprocessing/dist/effects/ColorDepth.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ColorDepth.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/ColorDepth.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ColorDepth.d.ts b/node_modules/@react-three/postprocessing/dist/effects/ColorDepth.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ColorDepth.js b/node_modules/@react-three/postprocessing/dist/effects/ColorDepth.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ColorDepth.js.map b/node_modules/@react-three/postprocessing/dist/effects/ColorDepth.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Depth.cjs b/node_modules/@react-three/postprocessing/dist/effects/Depth.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Depth.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/Depth.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Depth.d.ts b/node_modules/@react-three/postprocessing/dist/effects/Depth.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Depth.js b/node_modules/@react-three/postprocessing/dist/effects/Depth.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Depth.js.map b/node_modules/@react-three/postprocessing/dist/effects/Depth.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/DepthOfField.cjs b/node_modules/@react-three/postprocessing/dist/effects/DepthOfField.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/DepthOfField.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/DepthOfField.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/DepthOfField.d.ts b/node_modules/@react-three/postprocessing/dist/effects/DepthOfField.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/DepthOfField.js b/node_modules/@react-three/postprocessing/dist/effects/DepthOfField.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/DepthOfField.js.map b/node_modules/@react-three/postprocessing/dist/effects/DepthOfField.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/DotScreen.cjs b/node_modules/@react-three/postprocessing/dist/effects/DotScreen.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/DotScreen.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/DotScreen.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/DotScreen.d.ts b/node_modules/@react-three/postprocessing/dist/effects/DotScreen.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/DotScreen.js b/node_modules/@react-three/postprocessing/dist/effects/DotScreen.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/DotScreen.js.map b/node_modules/@react-three/postprocessing/dist/effects/DotScreen.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/FXAA.cjs b/node_modules/@react-three/postprocessing/dist/effects/FXAA.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/FXAA.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/FXAA.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/FXAA.d.ts b/node_modules/@react-three/postprocessing/dist/effects/FXAA.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/FXAA.js b/node_modules/@react-three/postprocessing/dist/effects/FXAA.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/FXAA.js.map b/node_modules/@react-three/postprocessing/dist/effects/FXAA.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Glitch.cjs b/node_modules/@react-three/postprocessing/dist/effects/Glitch.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Glitch.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/Glitch.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Glitch.d.ts b/node_modules/@react-three/postprocessing/dist/effects/Glitch.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Glitch.js b/node_modules/@react-three/postprocessing/dist/effects/Glitch.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Glitch.js.map b/node_modules/@react-three/postprocessing/dist/effects/Glitch.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/GodRays.cjs b/node_modules/@react-three/postprocessing/dist/effects/GodRays.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/GodRays.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/GodRays.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/GodRays.d.ts b/node_modules/@react-three/postprocessing/dist/effects/GodRays.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/GodRays.js b/node_modules/@react-three/postprocessing/dist/effects/GodRays.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/GodRays.js.map b/node_modules/@react-three/postprocessing/dist/effects/GodRays.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Grid.cjs b/node_modules/@react-three/postprocessing/dist/effects/Grid.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Grid.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/Grid.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Grid.d.ts b/node_modules/@react-three/postprocessing/dist/effects/Grid.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Grid.js b/node_modules/@react-three/postprocessing/dist/effects/Grid.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Grid.js.map b/node_modules/@react-three/postprocessing/dist/effects/Grid.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/HueSaturation.cjs b/node_modules/@react-three/postprocessing/dist/effects/HueSaturation.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/HueSaturation.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/HueSaturation.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/HueSaturation.d.ts b/node_modules/@react-three/postprocessing/dist/effects/HueSaturation.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/HueSaturation.js b/node_modules/@react-three/postprocessing/dist/effects/HueSaturation.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/HueSaturation.js.map b/node_modules/@react-three/postprocessing/dist/effects/HueSaturation.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/LUT.cjs b/node_modules/@react-three/postprocessing/dist/effects/LUT.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/LUT.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/LUT.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/LUT.d.ts b/node_modules/@react-three/postprocessing/dist/effects/LUT.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/LUT.js b/node_modules/@react-three/postprocessing/dist/effects/LUT.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/LUT.js.map b/node_modules/@react-three/postprocessing/dist/effects/LUT.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/LensFlare.cjs b/node_modules/@react-three/postprocessing/dist/effects/LensFlare.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/LensFlare.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/LensFlare.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/LensFlare.d.ts b/node_modules/@react-three/postprocessing/dist/effects/LensFlare.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/LensFlare.js b/node_modules/@react-three/postprocessing/dist/effects/LensFlare.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/LensFlare.js.map b/node_modules/@react-three/postprocessing/dist/effects/LensFlare.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/BlueNoise.cjs b/node_modules/@react-three/postprocessing/dist/effects/N8AO/BlueNoise.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/BlueNoise.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/N8AO/BlueNoise.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/BlueNoise.js b/node_modules/@react-three/postprocessing/dist/effects/N8AO/BlueNoise.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/BlueNoise.js.map b/node_modules/@react-three/postprocessing/dist/effects/N8AO/BlueNoise.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/DepthDownSample.cjs b/node_modules/@react-three/postprocessing/dist/effects/N8AO/DepthDownSample.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/DepthDownSample.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/N8AO/DepthDownSample.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/DepthDownSample.js b/node_modules/@react-three/postprocessing/dist/effects/N8AO/DepthDownSample.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/DepthDownSample.js.map b/node_modules/@react-three/postprocessing/dist/effects/N8AO/DepthDownSample.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/EffectCompositer.cjs b/node_modules/@react-three/postprocessing/dist/effects/N8AO/EffectCompositer.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/EffectCompositer.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/N8AO/EffectCompositer.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/EffectCompositer.js b/node_modules/@react-three/postprocessing/dist/effects/N8AO/EffectCompositer.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/EffectCompositer.js.map b/node_modules/@react-three/postprocessing/dist/effects/N8AO/EffectCompositer.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/EffectShader.cjs b/node_modules/@react-three/postprocessing/dist/effects/N8AO/EffectShader.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/EffectShader.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/N8AO/EffectShader.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/EffectShader.js b/node_modules/@react-three/postprocessing/dist/effects/N8AO/EffectShader.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/EffectShader.js.map b/node_modules/@react-three/postprocessing/dist/effects/N8AO/EffectShader.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/FullScreenTriangle.cjs b/node_modules/@react-three/postprocessing/dist/effects/N8AO/FullScreenTriangle.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/FullScreenTriangle.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/N8AO/FullScreenTriangle.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/FullScreenTriangle.js b/node_modules/@react-three/postprocessing/dist/effects/N8AO/FullScreenTriangle.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/FullScreenTriangle.js.map b/node_modules/@react-three/postprocessing/dist/effects/N8AO/FullScreenTriangle.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/N8AOPostPass.cjs b/node_modules/@react-three/postprocessing/dist/effects/N8AO/N8AOPostPass.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/N8AOPostPass.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/N8AO/N8AOPostPass.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/N8AOPostPass.js b/node_modules/@react-three/postprocessing/dist/effects/N8AO/N8AOPostPass.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/N8AOPostPass.js.map b/node_modules/@react-three/postprocessing/dist/effects/N8AO/N8AOPostPass.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/PoissionBlur.cjs b/node_modules/@react-three/postprocessing/dist/effects/N8AO/PoissionBlur.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/PoissionBlur.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/N8AO/PoissionBlur.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/PoissionBlur.js b/node_modules/@react-three/postprocessing/dist/effects/N8AO/PoissionBlur.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/PoissionBlur.js.map b/node_modules/@react-three/postprocessing/dist/effects/N8AO/PoissionBlur.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/index.cjs b/node_modules/@react-three/postprocessing/dist/effects/N8AO/index.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/index.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/N8AO/index.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/index.d.ts b/node_modules/@react-three/postprocessing/dist/effects/N8AO/index.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/index.js b/node_modules/@react-three/postprocessing/dist/effects/N8AO/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/N8AO/index.js.map b/node_modules/@react-three/postprocessing/dist/effects/N8AO/index.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Noise.cjs b/node_modules/@react-three/postprocessing/dist/effects/Noise.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Noise.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/Noise.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Noise.d.ts b/node_modules/@react-three/postprocessing/dist/effects/Noise.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Noise.js b/node_modules/@react-three/postprocessing/dist/effects/Noise.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Noise.js.map b/node_modules/@react-three/postprocessing/dist/effects/Noise.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Outline.cjs b/node_modules/@react-three/postprocessing/dist/effects/Outline.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Outline.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/Outline.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Outline.d.ts b/node_modules/@react-three/postprocessing/dist/effects/Outline.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Outline.js b/node_modules/@react-three/postprocessing/dist/effects/Outline.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Outline.js.map b/node_modules/@react-three/postprocessing/dist/effects/Outline.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Pixelation.cjs b/node_modules/@react-three/postprocessing/dist/effects/Pixelation.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Pixelation.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/Pixelation.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Pixelation.d.ts b/node_modules/@react-three/postprocessing/dist/effects/Pixelation.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Pixelation.js b/node_modules/@react-three/postprocessing/dist/effects/Pixelation.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Pixelation.js.map b/node_modules/@react-three/postprocessing/dist/effects/Pixelation.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SMAA.cjs b/node_modules/@react-three/postprocessing/dist/effects/SMAA.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SMAA.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/SMAA.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SMAA.d.ts b/node_modules/@react-three/postprocessing/dist/effects/SMAA.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SMAA.js b/node_modules/@react-three/postprocessing/dist/effects/SMAA.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SMAA.js.map b/node_modules/@react-three/postprocessing/dist/effects/SMAA.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SSAO.cjs b/node_modules/@react-three/postprocessing/dist/effects/SSAO.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SSAO.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/SSAO.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SSAO.d.ts b/node_modules/@react-three/postprocessing/dist/effects/SSAO.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SSAO.js b/node_modules/@react-three/postprocessing/dist/effects/SSAO.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SSAO.js.map b/node_modules/@react-three/postprocessing/dist/effects/SSAO.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SSR/index.cjs b/node_modules/@react-three/postprocessing/dist/effects/SSR/index.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SSR/index.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/SSR/index.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SSR/index.d.ts b/node_modules/@react-three/postprocessing/dist/effects/SSR/index.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SSR/index.js b/node_modules/@react-three/postprocessing/dist/effects/SSR/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SSR/index.js.map b/node_modules/@react-three/postprocessing/dist/effects/SSR/index.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SSR/screen-space-reflections.cjs b/node_modules/@react-three/postprocessing/dist/effects/SSR/screen-space-reflections.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SSR/screen-space-reflections.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/SSR/screen-space-reflections.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SSR/screen-space-reflections.js b/node_modules/@react-three/postprocessing/dist/effects/SSR/screen-space-reflections.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SSR/screen-space-reflections.js.map b/node_modules/@react-three/postprocessing/dist/effects/SSR/screen-space-reflections.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ScanlineEffect.cjs b/node_modules/@react-three/postprocessing/dist/effects/ScanlineEffect.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ScanlineEffect.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/ScanlineEffect.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ScanlineEffect.d.ts b/node_modules/@react-three/postprocessing/dist/effects/ScanlineEffect.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ScanlineEffect.js b/node_modules/@react-three/postprocessing/dist/effects/ScanlineEffect.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ScanlineEffect.js.map b/node_modules/@react-three/postprocessing/dist/effects/ScanlineEffect.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SelectiveBloom.cjs b/node_modules/@react-three/postprocessing/dist/effects/SelectiveBloom.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SelectiveBloom.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/SelectiveBloom.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SelectiveBloom.d.ts b/node_modules/@react-three/postprocessing/dist/effects/SelectiveBloom.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SelectiveBloom.js b/node_modules/@react-three/postprocessing/dist/effects/SelectiveBloom.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/SelectiveBloom.js.map b/node_modules/@react-three/postprocessing/dist/effects/SelectiveBloom.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Sepia.cjs b/node_modules/@react-three/postprocessing/dist/effects/Sepia.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Sepia.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/Sepia.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Sepia.d.ts b/node_modules/@react-three/postprocessing/dist/effects/Sepia.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Sepia.js b/node_modules/@react-three/postprocessing/dist/effects/Sepia.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Sepia.js.map b/node_modules/@react-three/postprocessing/dist/effects/Sepia.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ShockWave.cjs b/node_modules/@react-three/postprocessing/dist/effects/ShockWave.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ShockWave.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/ShockWave.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ShockWave.d.ts b/node_modules/@react-three/postprocessing/dist/effects/ShockWave.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ShockWave.js b/node_modules/@react-three/postprocessing/dist/effects/ShockWave.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ShockWave.js.map b/node_modules/@react-three/postprocessing/dist/effects/ShockWave.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Texture.cjs b/node_modules/@react-three/postprocessing/dist/effects/Texture.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Texture.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/Texture.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Texture.d.ts b/node_modules/@react-three/postprocessing/dist/effects/Texture.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Texture.js b/node_modules/@react-three/postprocessing/dist/effects/Texture.js
+old mode 100644
+new mode 100755
+index bc8efac..550d31f
+--- a/node_modules/@react-three/postprocessing/dist/effects/Texture.js
++++ b/node_modules/@react-three/postprocessing/dist/effects/Texture.js
+@@ -2,11 +2,11 @@ import { jsx } from "react/jsx-runtime";
+ import { TextureEffect } from "postprocessing";
+ import { forwardRef, useLayoutEffect, useMemo } from "react";
+ import { useLoader } from "@react-three/fiber";
+-import { TextureLoader, sRGBEncoding, RepeatWrapping } from "three";
++import { TextureLoader, RepeatWrapping } from "three";
+ const Texture = forwardRef(function Texture2({ textureSrc, texture, ...props }, ref) {
+   const t = useLoader(TextureLoader, textureSrc);
+   useLayoutEffect(() => {
+-    t.encoding = sRGBEncoding;
++    t.encoding = THREE.sRGBEncoding;
+     t.wrapS = t.wrapT = RepeatWrapping;
+   }, [t]);
+   const effect = useMemo(() => new TextureEffect({ ...props, texture: t || texture }), [props, t, texture]);
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Texture.js.map b/node_modules/@react-three/postprocessing/dist/effects/Texture.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/TiltShift.cjs b/node_modules/@react-three/postprocessing/dist/effects/TiltShift.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/TiltShift.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/TiltShift.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/TiltShift.d.ts b/node_modules/@react-three/postprocessing/dist/effects/TiltShift.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/TiltShift.js b/node_modules/@react-three/postprocessing/dist/effects/TiltShift.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/TiltShift.js.map b/node_modules/@react-three/postprocessing/dist/effects/TiltShift.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/TiltShift2.cjs b/node_modules/@react-three/postprocessing/dist/effects/TiltShift2.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/TiltShift2.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/TiltShift2.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/TiltShift2.d.ts b/node_modules/@react-three/postprocessing/dist/effects/TiltShift2.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/TiltShift2.js b/node_modules/@react-three/postprocessing/dist/effects/TiltShift2.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/TiltShift2.js.map b/node_modules/@react-three/postprocessing/dist/effects/TiltShift2.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ToneMapping.cjs b/node_modules/@react-three/postprocessing/dist/effects/ToneMapping.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ToneMapping.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/ToneMapping.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ToneMapping.d.ts b/node_modules/@react-three/postprocessing/dist/effects/ToneMapping.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ToneMapping.js b/node_modules/@react-three/postprocessing/dist/effects/ToneMapping.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/ToneMapping.js.map b/node_modules/@react-three/postprocessing/dist/effects/ToneMapping.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Vignette.cjs b/node_modules/@react-three/postprocessing/dist/effects/Vignette.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Vignette.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/Vignette.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Vignette.d.ts b/node_modules/@react-three/postprocessing/dist/effects/Vignette.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Vignette.js b/node_modules/@react-three/postprocessing/dist/effects/Vignette.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Vignette.js.map b/node_modules/@react-three/postprocessing/dist/effects/Vignette.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Water.cjs b/node_modules/@react-three/postprocessing/dist/effects/Water.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Water.cjs.map b/node_modules/@react-three/postprocessing/dist/effects/Water.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Water.d.ts b/node_modules/@react-three/postprocessing/dist/effects/Water.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Water.js b/node_modules/@react-three/postprocessing/dist/effects/Water.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/effects/Water.js.map b/node_modules/@react-three/postprocessing/dist/effects/Water.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/index.cjs b/node_modules/@react-three/postprocessing/dist/index.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/index.cjs.map b/node_modules/@react-three/postprocessing/dist/index.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/index.d.ts b/node_modules/@react-three/postprocessing/dist/index.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/index.js b/node_modules/@react-three/postprocessing/dist/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/index.js.map b/node_modules/@react-three/postprocessing/dist/index.js.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/util.cjs b/node_modules/@react-three/postprocessing/dist/util.cjs
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/util.cjs.map b/node_modules/@react-three/postprocessing/dist/util.cjs.map
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/util.d.ts b/node_modules/@react-three/postprocessing/dist/util.d.ts
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/util.js b/node_modules/@react-three/postprocessing/dist/util.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@react-three/postprocessing/dist/util.js.map b/node_modules/@react-three/postprocessing/dist/util.js.map
+old mode 100644
+new mode 100755
