@@ -1,200 +1,113 @@
 import { useState, useEffect } from "react";
 import { Physics, CuboidCollider } from "@react-three/rapier";
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
 
 import { useDialogue } from "../../../Context/DialogueProviderContext";
-import dialogueData from "../../data/statueDialogue.json";
+import { STATUES, STATUE_ARGS, HITBOX_ARGS, END_STATUE } from "../../../data/statueData";
+import useInteract from "../../../Hooks/useInteract";
 
-// Floor
-import Floor from "../../Floor";
+import Floor from "./Enviroment/Floor";
+import BoundaryWalls from "./Enviroment/BoundryWalls";
+import ForestBoundary from "./Enviroment/ForestBoundary";
+import GreenPlane from "./Enviroment/GreenPlane";
 
-// Character
 import Character from "../../Character/Character";
-
-// Portal
-import Portal from "../../Portal";
-
-// Statues
+import Portal from "../../Portal/Portal";
 import Statue from "./Statues/Statue";
 import FloatingPlane from "./Statues/FloatingPlane";
 
-// Bug where the pathfinder hitbox is being read as soon as you go in.
-// A little fix is that you have to interact with any statue.
-// Other than that I'm not too sure.
 const AboutMe = () => {
-	// const [isLoaded, setIsLoaded] = useState(false);
-	// const { camera } = useThree();
-	const [activeDialogueNum, setActiveDialogueNum] = useState(null);
-	const [insideHitbox, setInsideHitbox] = useState(false);
-	const { isVisible, showDialogueOnce, hideDialogue } = useDialogue();
+  const [activeDialogueNum, setActiveDialogueNum] = useState(null);
+  const [insideHitbox, setInsideHitbox] = useState(false);
+  const { isVisible, showDialogueOnce, hideDialogue } = useDialogue();
 
-	const statueArgs = [3, 6.6, 6.6];
+  useInteract(() => {
+    if (insideHitbox && activeDialogueNum) {
+      const activeStatue = STATUES.find((s) => s.id === activeDialogueNum);
+      if (activeStatue && !isVisible) {
+        showDialogueOnce(activeStatue.id, activeStatue.dialogue ?? []);
+      }
+    }
+  }, insideHitbox);
 
-	// const handleLoadComplete = () => {
-	// 	setIsLoaded(true);
-	// };
+  return (
+    <>
+      <EffectComposer>
+        <Bloom kernelSize={5} luminanceThreshold={0.4} luminanceSmoothing={0.6} intensity={1} />
+      </EffectComposer>
+      <Physics gravity={[0, -9.81, 0]}>
+        <Floor
+          texturePath="/Textures/aboutMeGround.png"
+          position={[0, 0, 40]}
+          worldWidth={50}
+          worldDepth={90}
+          flipZ={true}
+        />
+        <GreenPlane position={[0, -0.1, 40]} size={300} />
 
-	useEffect(() => {
-		if (!insideHitbox) return;
+        <Character characterPOS={[1, 1, 79]} sceneName="About me" disableMovement={isVisible} />
+        <Portal args={[1, 1.8, 0.3]} position={[0, 3, 81]} portalName={"PixelPortal"} />
 
-		const handleKeyDown = (e) => {
-			const linesForID = dialogueData?.[activeDialogueNum] ?? [];
-			if (insideHitbox) {
-				if (!isVisible && [" ", "e", "f"].includes(e.key)) {
-					if (!activeDialogueNum) return;
-					showDialogueOnce(activeDialogueNum, linesForID);
-				}
-			}
-		};
+        <group position={[0, 0, 40]}>
+          <BoundaryWalls width={50} depth={90} />
+          <ForestBoundary width={50} depth={90} />
+        </group>
 
-		window.addEventListener("keydown", handleKeyDown);
-		return () => window.removeEventListener("keydown", handleKeyDown);
-	}, [insideHitbox, activeDialogueNum]);
+        {/* Every statue rendered from one array — add/remove/reposition by editing statuesConfig.js only */}
+        {STATUES.map((statue) => (
+          <group key={statue.id}>
+            <CuboidCollider
+              args={HITBOX_ARGS}
+              position={statue.hitboxPosition}
+              sensor={true}
+              onIntersectionEnter={() => {
+                setInsideHitbox(true);
+                setActiveDialogueNum(statue.id);
+              }}
+              onIntersectionExit={() => {
+                setInsideHitbox(false);
+                hideDialogue();
+                setActiveDialogueNum(null);
+              }}
+            />
+            <Statue
+              statueArgs={STATUE_ARGS}
+              position={statue.position}
+              texturePath={statue.texturePath}
+              spriteWidth={statue.spriteWidth}
+              spriteHeight={statue.spriteHeight}
+            />
+          </group>
+        ))}
 
-	return (
-		<>
-			<Physics gravity={[0, -9.81, 0]} debug>
-				<Floor />
-				<Character
-					characterPOS={[1, 1, 1]}
-					sceneName="About me"
-					disableMovement={isVisible}
-				/>
-
-				<Portal
-					args={[1, 1.8, 0.3]}
-					position={[1, 3, -3]}
-					portalName={"Main"}
-				/>
-
-				<group>
-					<CuboidCollider
-						args={[1.5, 2, 1.5]}
-						position={[21, 1, 21]}
-						sensor={true} // Ensures we detect collisions without physical interaction
-						onIntersectionEnter={() => {
-							setInsideHitbox(true), setActiveDialogueNum("architect");
-						}}
-						onIntersectionExit={() => {
-							setInsideHitbox(false), setActiveDialogueNum(null);
-						}}
-					/>
-					<Statue
-						statueArgs={statueArgs}
-						position={[24, 1, 21]}
-					/>
-				</group>
-
-				<group>
-					<CuboidCollider
-						args={[1.5, 2, 1.5]}
-						position={[-21, 1, 21]}
-						sensor={true} // Ensures we detect collisions without physical interaction
-						onIntersectionEnter={() => {
-							setInsideHitbox(true), setActiveDialogueNum("chronicler");
-						}}
-						onIntersectionExit={() => {
-							setInsideHitbox(false), setActiveDialogueNum(null);
-						}}
-					/>
-					<Statue
-						statueArgs={statueArgs}
-						position={[-24, 1, 21]}
-					/>
-				</group>
-
-				<group>
-					<CuboidCollider
-						args={[1.5, 2, 1.5]}
-						position={[21, 1, 45]}
-						sensor={true} // Ensures we detect collisions without physical interaction
-						onIntersectionEnter={() => {
-							setInsideHitbox(true), setActiveDialogueNum("seeker");
-						}}
-						onIntersectionExit={() => {
-							setInsideHitbox(false),
-								hideDialogue(),
-								setActiveDialogueNum(null);
-						}}
-					/>
-					<Statue
-						statueArgs={statueArgs}
-						position={[24, 1, 45]}
-					/>
-				</group>
-
-				<group>
-					<CuboidCollider
-						args={[1.5, 2, 1.5]}
-						position={[-21, 1, 45]}
-						sensor={true} // Ensures we detect collisions without physical interaction
-						onIntersectionEnter={() => {
-							setInsideHitbox(true), setActiveDialogueNum("duelist");
-						}}
-						onIntersectionExit={() => {
-							setInsideHitbox(false),
-								hideDialogue(),
-								setActiveDialogueNum(null);
-						}}
-					/>
-					<Statue
-						statueArgs={statueArgs}
-						position={[-24, 1, 45]}
-					/>
-				</group>
-
-				<group>
-					<CuboidCollider
-						args={[1.5, 2, 1.5]}
-						position={[21, 1, 69]}
-						sensor={true} // Ensures we detect collisions without physical interaction
-						onIntersectionEnter={() => {
-							setInsideHitbox(true), setActiveDialogueNum("dreamsmith");
-						}}
-						onIntersectionExit={() => {
-							setInsideHitbox(false),
-								hideDialogue(),
-								setActiveDialogueNum(null);
-						}}
-					/>
-					<Statue
-						statueArgs={statueArgs}
-						position={[24, 1, 69]}
-					/>
-				</group>
-
-				<group>
-					<CuboidCollider
-						args={[1.5, 2, 1.5]}
-						position={[-21, 1, 69]}
-						sensor={true} // Ensures we detect collisions without physical interaction
-						onIntersectionEnter={() => {
-							setInsideHitbox(true), setActiveDialogueNum("pathfinder");
-						}}
-						onIntersectionExit={() => {
-							setInsideHitbox(false),
-								hideDialogue(),
-								setActiveDialogueNum(null);
-						}}
-					/>
-					<Statue
-						statueArgs={statueArgs}
-						position={[-24, 1, 69]}
-					/>
-				</group>
-
-				<group>
-					<Statue
-						statueArgs={[12, 2, 3]}
-						position={[1, 1, 81]}
-					/>
-
-					<FloatingPlane position={[5, 2, 78]} />
-					<FloatingPlane position={[1, 2, 78]} />
-					<FloatingPlane position={[-3, 2, 78]} />
-				</group>
-			</Physics>
-		</>
-	);
+        <group>
+          <Statue
+            statueArgs={END_STATUE.args}
+            position={END_STATUE.position}
+            texturePath={END_STATUE.texturePath}
+            spriteWidth={END_STATUE.spriteWidth}
+            spriteHeight={END_STATUE.spriteHeight}
+          />
+          <FloatingPlane
+            position={[0, 2, 3]}
+            texturePath="/Textures/runeSymbol4.png"
+            url="https://github.com/zachary-rihia"
+          />
+          <FloatingPlane
+            position={[4, 2, 3]}
+            texturePath="/Textures/runeSymbol3.png"
+            url="https://linkedin.com/in/zachary-rihia"
+          />
+          <FloatingPlane
+            position={[-4, 2, 3]}
+            texturePath="/Textures/runeSymbol1.png"
+            url="/Documents/YourName_CV.pdf"
+            download={true}
+          />
+        </group>
+      </Physics>
+    </>
+  );
 };
 
 export default AboutMe;

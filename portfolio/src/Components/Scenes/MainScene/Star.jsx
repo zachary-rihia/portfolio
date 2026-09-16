@@ -1,73 +1,81 @@
-import { useRef } from "react";
+import { useRef, useEffect, useMemo, forwardRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import PropTypes from "prop-types";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
-import { Sphere } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import { RigidBody } from "@react-three/rapier";
+import * as THREE from "three";
 
 // Effects
 import StarLight from "../../Effects/StarLight";
 
 import StarSigns from "../../Signs/StarSigns";
-import Portal from "../../Portal";
+import Portal from "../../Portal/Portal";
 
-const Star = ({ starPosition, colour, text, godrays, portal }) => {
-  const sphereRef = useRef();
+useGLTF.preload("/Models/Star/Star.glb");
+
+const Star = forwardRef(({ starPosition, colour, text, portalName }, ref) => {
+  const groupRef = useRef();
+
+  // Clone the cached scene so multiple Star instances don't share one object
+  const { scene: originalScene } = useGLTF("/Models/Star/Star.glb");
+  const scene = useMemo(() => originalScene.clone(true), [originalScene]);
+
+  // Walk every mesh in the model and apply the emissive colour
+  useEffect(() => {
+    scene.traverse((child) => {
+      if (child.isMesh) {
+        child.material = new THREE.MeshPhongMaterial({
+          color: colour,
+          emissive: colour,
+          emissiveIntensity: 1,
+        });
+        // Ensures bloom picks up the emissive
+        child.material.toneMapped = false;
+      }
+    });
+  }, [scene, colour, ref]);
 
   useFrame(() => {
-    // Axis rotation
-    if (sphereRef.current) {
-      sphereRef.current.rotation.y -= 0.3;
+    if (groupRef.current) {
+      groupRef.current.rotation.y -= 0.003;
     }
   });
 
-  
-
   return (
     <>
-      <EffectComposer>
-        <Bloom
-          kernelSize={5}
-          luminanceThreshold={0.4}
-          luminanceSmoothing={0.6}
-          intensity={1}
-        />
-      </EffectComposer>
       <group>
-        <RigidBody position={starPosition} args={[7.5]}>
-          <Sphere ref={sphereRef} args={[7.5, 75, 75]}>
-            <meshPhongMaterial
-              color={colour}
-              // eslint-disable-next-line react/no-unknown-property
-              emissive={colour}
-              // eslint-disable-next-line react/no-unknown-property
-              emissiveIntensity={3}
-            />
-            <pointLight />
-          </Sphere>
+        <RigidBody position={starPosition} type="fixed" colliders="hull">
+          {/* ref lives on this inner group so rotation doesn't fight the RigidBody */}
+          <group ref={groupRef}>
+            <primitive object={scene} scale={24} />
+            <pointLight color={colour} intensity={2} distance={30} />
+          </group>
         </RigidBody>
-        <StarSigns
-          position={[starPosition[0], 0.3, starPosition[2] + 24]}
-          text={text}
-        />
-        {portal && <Portal
+
+        <group position={starPosition}>
+          <StarLight colour={colour} />
+        </group>
+
+        <StarSigns position={[starPosition[0], 0.3, starPosition[2] + 24]} text={text} />
+
+        <Portal
           args={[2.1, 2.9, 0]}
           position={[starPosition[0], 3, starPosition[2] + 15]}
-          portalName={text}
-        /> }
-        {/* <StarLight sphereRef={sphereRef}/> */}
-        {/* {godrays && <StarLight sphereRef={sphereRef} />} */}
+          portalName={portalName}
+        />
       </group>
     </>
   );
-};
+});
+
+Star.displayName = "Star";
 
 Star.propTypes = {
   starPosition: PropTypes.arrayOf(PropTypes.number).isRequired,
   colour: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  godrays: PropTypes.bool.isRequired,
-  portal: PropTypes.bool.isRequired,
+  portalName: PropTypes.string.isRequired,
 };
 
 export default Star;

@@ -6,17 +6,19 @@ import "./index.css";
 import { Canvas } from "@react-three/fiber";
 import { DialogueProvider } from "./Context/DialogueProviderContext.jsx";
 import DialogueBox from "./Components/DialogueBox.jsx";
+import LoadingScreen from "./Components/LoadingScreen";
 
 window.addEventListener("click", () => window.focus());
 ReactDOM.createRoot(document.getElementById("root")).render(
-	<React.StrictMode>
-		<DialogueProvider>
-			<Canvas>
-				<ambientLight intensity={0.5} />
-				<pointLight position={[10, 10, 10]} />
-				<App />
-			</Canvas>
-			<DialogueBox />
-		</DialogueProvider>
-	</React.StrictMode>
+  <React.StrictMode>
+    <DialogueProvider>
+      <Canvas>
+        <ambientLight intensity={0.5} />
+        <pointLight position={[10, 10, 10]} />
+        <App />
+      </Canvas>
+      <DialogueBox />
+    </DialogueProvider>
+    <LoadingScreen />
+  </React.StrictMode>
 );

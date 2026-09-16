@@ -1,51 +1,56 @@
 import { useEffect } from "react";
 import { useDialogue } from "../Context/DialogueProviderContext";
+import useInteract from "../Hooks/useInteract";
 
 const DialogueBox = () => {
-	const { isVisible, currentLine, nextLine, hideDialogue } = useDialogue();
+  const { isVisible, currentLine, nextLine, hideDialogue } = useDialogue();
 
-	useEffect(() => {
-		if (!isVisible) return;
-		window.focus();
+  // Advancing the dialogue now goes through the same shared interact key
+  // as everything else — space/e/f, defined once in useInteract.js
+  useInteract(() => {
+    nextLine();
+  }, isVisible); // only active while a dialogue box is actually showing
 
-		const handleKeyDown = (e) => {
-			if ([" ", "e", "f"].includes(e.key)) {
-				nextLine();
-			} else if (e.key === "Escape") {
-				hideDialogue();
-			}
-		};
+  // Escape isn't an "interact" key, so it stays as its own small listener
+  useEffect(() => {
+    if (!isVisible) return;
 
-		document.addEventListener("keydown", handleKeyDown);
-		return () => document.removeEventListener("keydown", handleKeyDown);
-	}, [isVisible, nextLine, hideDialogue]);
+    const handleEscape = (e) => {
+      if (e.key === "Escape") {
+        hideDialogue();
+      }
+    };
 
-	if (!isVisible) return null;
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [isVisible, hideDialogue]);
 
-	return (
-		<div
-			style={{
-				position: "absolute",
-				bottom: "30px",
-				left: "50%",
-				transform: "translateX(-50%)",
-				backgroundColor: "#333",
-				color: "#fff",
-				padding: "16px 24px",
-				borderRadius: "12px",
-				border: "2px solid #fff",
-				fontFamily: "monospace",
-				fontSize: "30px",
-				height: "20%",
-				width: "70%",
-				textAlign: "left",
-				zIndex: 10,
-				cursor: "pointer",
-			}}
-		>
-			{currentLine}
-		</div>
-	);
+  if (!isVisible) return null;
+
+  return (
+    <div
+      style={{
+        position: "absolute",
+        bottom: "30px",
+        left: "50%",
+        transform: "translateX(-50%)",
+        backgroundColor: "#333",
+        color: "#fff",
+        padding: "16px 24px",
+        borderRadius: "12px",
+        border: "2px solid #fff",
+        fontFamily: "monospace",
+        fontSize: "30px",
+        height: "20%",
+        width: "70%",
+        textAlign: "left",
+        zIndex: 10,
+        cursor: "pointer",
+      }}
+    >
+      {currentLine}
+    </div>
+  );
 };
 
 export default DialogueBox;

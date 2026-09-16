@@ -21,5 +21,4 @@ const SceneHandler = () => {
   );
 };
 
-
 export default SceneHandler;

@@ -1,0 +1,38 @@
+{
+    admin off
+    persist_config off
+    auto_https off
+    log {
+        format json
+    }
+    servers {
+        trusted_proxies static private_ranges 100.0.0.0/8
+    }
+}
+
+:{$PORT:3000} {
+    log {
+        format json
+    }
+
+    rewrite /health /*
+
+    root * dist
+
+    # Enable gzip so large assets (GLB models, textures, sprite sheets)
+    # transfer faster to visitors
+    encode gzip
+
+    # Cache static assets aggressively since Vite fingerprints filenames
+    # on every build (e.g. index-a1b2c3.js) — safe to cache forever
+    @static {
+        path *.js *.css *.woff *.woff2 *.glb *.gltf *.png *.jpg *.jpeg *.svg
+    }
+    header @static Cache-Control "public, max-age=31536000, immutable"
+
+    file_server
+
+    # Client-side routing / scene transitions fall back to index.html
+    # instead of 404ing on a direct link or refresh
+    try_files {path} /index.html
+}

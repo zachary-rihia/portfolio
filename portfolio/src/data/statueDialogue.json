@@ -1,0 +1,43 @@
+{
+  "architect": [
+    "The Architect stands motionless, blueprints etched into stone.",
+    "Every structure begins as chaos, before it becomes intent.",
+    "I do not build by accident. I build by design.",
+    "...Look closer. Nothing here was left to chance."
+  ],
+
+  "chronicler": [
+    "The Chronicler remembers everything — even the mistakes.",
+    "I did not begin as I am now.",
+    "I learned by breaking things, then wondering why.",
+    "That habit never really left."
+  ],
+
+  "seeker": [
+    "The Seeker never stays still for long.",
+    "A new tool. A new question. That's enough to start.",
+    "I take things apart not to understand them, but to see what they could become.",
+    "Curiosity isn't a phase. It's a rhythm."
+  ],
+
+  "duelist": [
+    "The Duelist has fallen more times than most.",
+    "Discipline wasn't given to me. It was earned, one fall at a time.",
+    "Balance isn't the absence of struggle. It's what remains after it.",
+    "I carry that lesson into everything I build."
+  ],
+
+  "dreamsmith": [
+    "The Dreamsmith listens to worlds that don't exist yet.",
+    "Stories shaped me long before code did.",
+    "Every idea I've built started as something I once imagined.",
+    "Some call it distraction. I call it material."
+  ],
+
+  "pathfinder": [
+    "The Pathfinder doesn't follow roads. It makes them.",
+    "Somewhere ahead is something worth building. I just haven't found it yet.",
+    "I don't code only to solve problems.",
+    "I code to see what happens next."
+  ]
+}
