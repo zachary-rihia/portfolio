@@ -1,0 +1,51 @@
+# ── Dependencies ────────────────────────────────────────────────────
+node_modules
+
+# ── Build output ─────────────────────────────────────────────────────
+dist
+build
+out
+.output
+
+# ── Vite cache ───────────────────────────────────────────────────────
+.vite
+*.local
+
+# ── 3D / Binary assets (never format these) ──────────────────────────
+public/models/**
+public/textures/**
+public/audio/**
+src/assets/models/**
+src/assets/textures/**
+*.glb
+*.gltf
+*.hdr
+*.exr
+*.ktx
+*.ktx2
+*.basis
+*.bin
+
+# ── Auto-generated files ─────────────────────────────────────────────
+src/vite-env.d.ts
+*.d.ts
+*.min.js
+*.min.css
+
+# ── Coverage and test output ─────────────────────────────────────────
+coverage
+.nyc_output
+
+# ── Environment files ────────────────────────────────────────────────
+.env
+.env.*
+
+# ── IDE and OS ───────────────────────────────────────────────────────
+.DS_Store
+.idea
+.vscode
+
+# ── Package manager lockfiles (let the package manager own these) ────
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
