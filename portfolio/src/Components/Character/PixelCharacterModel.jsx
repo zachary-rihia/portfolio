@@ -24,7 +24,7 @@ const getDirection = (x, z) => {
   return z > 0 ? "down" : "up";
 };
 
-const PixelCharacterModel = ({ isMoving, directionRef, width = 1.5, height = 1.5 }) => {
+const PixelCharacterModel = ({ isMovingRef, directionRef, width = 1.5, height = 1.5 }) => {
   const frameIndex = useRef(0);
   const frameTimer = useRef(0);
   // This persists across moving -> idle transitions since it's a ref,
@@ -48,6 +48,7 @@ const PixelCharacterModel = ({ isMoving, directionRef, width = 1.5, height = 1.5
   }, [loadedTextures]);
 
   useFrame((_, delta) => {
+    const isMoving = isMovingRef.current;
     // Only updates while actually moving — once movement stops, this simply
     // stops running, leaving currentDirection.current at whatever it last was
     if (isMoving && directionRef?.current) {

@@ -101,7 +101,7 @@ const AboutMe = () => {
           <FloatingPlane
             position={[-4, 2, 3]}
             texturePath="/Textures/runeSymbol1.png"
-            url="/Documents/YourName_CV.pdf"
+            url="/Documents/Zachary_Rihia_CV.pdf"
             download={true}
           />
         </group>

@@ -1,6 +1,5 @@
-import { useContext, useRef, useEffect, useState } from "react";
+import { useContext, useRef, useEffect } from "react";
 import * as THREE from "three";
-import { Capsule } from "@react-three/drei";
 import { RigidBody, CapsuleCollider } from "@react-three/rapier";
 import { useFrame, useThree } from "@react-three/fiber";
 import PropTypes from "prop-types";
@@ -10,13 +9,12 @@ import CharacterPositionContext from "../../Context/CharacterPositionContext";
 import CharacterModel from "../Character/CharacterModel";
 import PixelCharacterModel from "./PixelCharacterModel";
 
-const MOVE_SPEED = 21;
+const MOVE_SPEED = 15;
 const direction = new THREE.Vector3();
-const frontVector = new THREE.Vector3();
-const sideVector = new THREE.Vector3();
 const cameraForward = new THREE.Vector3();
 const cameraRight = new THREE.Vector3();
 const UP = new THREE.Vector3(0, 1, 0);
+const characterPosition = new THREE.Vector3();
 
 const ABOUT_ME_BOUNDS = {
   halfWidth: 24, // tune — should be a bit less than half your corridor width (50/2 = 25)
@@ -29,8 +27,8 @@ const Character = ({ characterPOS, sceneName, disableMovement }) => {
   const directionRef = useRef({ x: 0, z: 0 });
   const { camera } = useThree();
   const { forward, backward, left, right } = usePlayerControls();
-  const { setPosition } = useContext(CharacterPositionContext);
-  const [isMoving, setIsMoving] = useState(false);
+  const isMovingRef = useRef(false);
+  const { positionRef } = useContext(CharacterPositionContext);
 
   useEffect(() => {
     // const handleWheel = (event) => {
@@ -68,11 +66,8 @@ const Character = ({ characterPOS, sceneName, disableMovement }) => {
     if (!playerRef.current || disableMovement) return;
 
     // Ensure the character's position is a THREE.Vector3 object
-    const characterPosition = new THREE.Vector3(
-      playerRef.current.translation().x,
-      playerRef.current.translation().y,
-      playerRef.current.translation().z
-    );
+    const t = playerRef.current.translation();
+    characterPosition.set(t.x, t.y, t.z);
 
     if (sceneName === "About me") {
       const clampedX = THREE.MathUtils.clamp(
@@ -123,24 +118,26 @@ const Character = ({ characterPOS, sceneName, disableMovement }) => {
     // ─────────────────────────────────────────────────────────────────────
 
     const isActuallyMoving = direction.lengthSq() > 0;
-    setIsMoving(isActuallyMoving);
+    isMovingRef.current = isActuallyMoving; 
 
     if (isActuallyMoving) {
       direction.normalize().multiplyScalar(MOVE_SPEED);
-      // Only update facing direction when actually moving
-      directionRef.current = { x: direction.x, z: direction.z };
+      directionRef.current.x = direction.x;
+      directionRef.current.z = direction.z;
     }
 
     const velocity = playerRef.current.linvel();
     playerRef.current.wakeUp();
 
-    const playerPOS = playerRef.current.setLinvel({
+    playerRef.current.setLinvel({
       x: direction.x,
       y: velocity.y,
       z: direction.z,
     });
 
-    setPosition(playerPOS);
+    positionRef.current.x = characterPosition.x;
+    positionRef.current.y = characterPosition.y;
+    positionRef.current.z = characterPosition.z;
   });
 
   return (
@@ -149,9 +146,9 @@ const Character = ({ characterPOS, sceneName, disableMovement }) => {
         <CapsuleCollider args={[0.8, 0.5]} position={[0, 0.25, 0]} />
 
         {sceneName === "About me" ? (
-          <PixelCharacterModel isMoving={isMoving} directionRef={directionRef} />
+          <PixelCharacterModel isMovingRef={isMovingRef} directionRef={directionRef} />
         ) : (
-          <CharacterModel isMoving={isMoving} directionRef={directionRef} />
+          <CharacterModel isMovingRef={isMovingRef} directionRef={directionRef} />
         )}
       </RigidBody>
     </group>

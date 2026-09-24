@@ -23,7 +23,7 @@ const COOLDOWN_MAX = 14;
 
 const randomCooldown = () => Math.random() * (COOLDOWN_MAX - COOLDOWN_MIN) + COOLDOWN_MIN;
 
-const CharacterModel = ({ isMoving, directionRef }) => {
+const CharacterModel = ({ isMovingRef, directionRef }) => {
   const group = useRef();
 
   // useGLTF handles loading, caching, and cleanup automatically
@@ -54,6 +54,7 @@ const CharacterModel = ({ isMoving, directionRef }) => {
 
   useFrame((_, delta) => {
     if (!group.current) return;
+    const isMoving = isMovingRef.current;
 
     // -------------------------------------------------------
     // 1. FACING DIRECTION
