@@ -5,6 +5,7 @@ import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { useDialogue } from "../../../Context/DialogueProviderContext";
 import { STATUES, STATUE_ARGS, HITBOX_ARGS, END_STATUE } from "../../../data/statueData";
 import useInteract from "../../../Hooks/useInteract";
+import useTabVisibility from "../../../Hooks/useTabVisibility";
 
 import Floor from "./Enviroment/Floor";
 import BoundaryWalls from "./Enviroment/BoundryWalls";
@@ -17,6 +18,7 @@ import Statue from "./Statues/Statue";
 import FloatingPlane from "./Statues/FloatingPlane";
 
 const AboutMe = () => {
+  const isTabHidden = useTabVisibility();
   const [activeDialogueNum, setActiveDialogueNum] = useState(null);
   const [insideHitbox, setInsideHitbox] = useState(false);
   const { isVisible, showDialogueOnce, hideDialogue } = useDialogue();
@@ -35,7 +37,7 @@ const AboutMe = () => {
       <EffectComposer>
         <Bloom kernelSize={5} luminanceThreshold={0.4} luminanceSmoothing={0.6} intensity={1} />
       </EffectComposer>
-      <Physics gravity={[0, -9.81, 0]}>
+      <Physics gravity={[0, -9.81, 0]} paused={isTabHidden}>
         <Floor
           texturePath="/Textures/aboutMeGround.png"
           position={[0, 0, 40]}

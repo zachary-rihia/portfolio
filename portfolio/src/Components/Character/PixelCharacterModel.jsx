@@ -48,6 +48,7 @@ const PixelCharacterModel = ({ isMovingRef, directionRef, width = 1.5, height = 
   }, [loadedTextures]);
 
   useFrame((_, delta) => {
+    const clampedDelta = Math.min(delta, 1 / 30);
     const isMoving = isMovingRef.current;
     // Only updates while actually moving — once movement stops, this simply
     // stops running, leaving currentDirection.current at whatever it last was
@@ -59,7 +60,7 @@ const PixelCharacterModel = ({ isMovingRef, directionRef, width = 1.5, height = 
     }
 
     const duration = isMoving ? FRAME_DURATION : IDLE_FRAME_DURATION;
-    frameTimer.current += delta;
+    frameTimer.current += clampedDelta;
 
     if (frameTimer.current >= duration) {
       frameTimer.current = 0;

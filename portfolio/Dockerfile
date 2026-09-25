@@ -9,6 +9,7 @@ WORKDIR /app
 # Install dependencies first so Docker can cache this layer
 # whenever only source files change, not package.json
 COPY package*.json ./
+COPY patches ./patches
 RUN npm ci
 
 # Copy everything else (src, public assets, configs) and build

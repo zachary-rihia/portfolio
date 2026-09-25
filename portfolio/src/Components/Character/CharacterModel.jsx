@@ -54,6 +54,7 @@ const CharacterModel = ({ isMovingRef, directionRef }) => {
 
   useFrame((_, delta) => {
     if (!group.current) return;
+    const clampedDelta = Math.min(delta, 1 / 30);
     const isMoving = isMovingRef.current;
 
     // -------------------------------------------------------
@@ -92,7 +93,7 @@ const CharacterModel = ({ isMovingRef, directionRef }) => {
     // -------------------------------------------------------
     // 3. IDLE CYCLING WITH COOLDOWN
     // -------------------------------------------------------
-    idleTimer.current -= delta; // delta is in seconds
+    idleTimer.current -= clampedDelta;
 
     if (idleTimer.current <= 0) {
       // Advance to next idle clip, wrapping around

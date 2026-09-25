@@ -1,6 +1,7 @@
 import { OrbitControls } from "@react-three/drei";
 import { Physics } from "@react-three/rapier";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
+import useTabVisibility from "../../../Hooks/useTabVisibility";
 
 // Floor
 import Floor from "../../Flooring/Floor";
@@ -15,6 +16,7 @@ import Star from "./Star";
 import Character from "../../Character/Character";
 
 const MainScene = () => {
+  const isTabHidden = useTabVisibility();
   return (
     <>
       <OrbitControls />
@@ -29,7 +31,7 @@ const MainScene = () => {
       {/* <NebulaFloor />  */}
       <ControlsSign position={[-10, 0, -47]} />
 
-      <Physics gravity={[0, -9.81, 0]}>
+      <Physics gravity={[0, -9.81, 0]} paused={isTabHidden}>
         <Floor />
         <Character characterPOS={[0, 1.5, -33]} sceneName="Main" disableMovement={false} />
 
