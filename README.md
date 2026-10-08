@@ -4,7 +4,7 @@
 
 An interactive 3D portfolio built with React Three Fiber — instead of scrolling through a traditional resume site, visitors walk a character through a small explorable world. Projects live as physical books on a shelf, statues share a bit about me through dialogue, and portals connect different scenes together.
 
-> 🔗 **Live demo:** _add your deployed Railway URL here_
+> 🔗 **Live demo:** portfolio.rihia.net
 
 ---
 
