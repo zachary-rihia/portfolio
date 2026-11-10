@@ -1,0 +1,32 @@
+[build]
+  # Relative to the base directory (set to "portfolio" in the Netlify UI)
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Matches a modern Node LTS; Vite 5 needs Node 18+
+  NODE_VERSION = "20"
+
+# SPA fallback: any path serves index.html instead of a 404
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Vite fingerprints JS/CSS filenames, so they are safe to cache for a year
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Your models and textures keep the same filenames, so cache them for a day
+# rather than a year, otherwise updated assets won't show up for returning visitors
+[[headers]]
+  for = "/Models/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/Textures/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
